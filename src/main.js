@@ -10,7 +10,6 @@ const usedPrioritys =[];
 addButton.addEventListener('click', () => { //add new item to the list
     const insertedValue = input.value;  //get the user new todo content
     const currentPriority = prioritySelect.value; //get the nte todo's priority
-
     const isNewPriorityExist = isPriorityExist(currentPriority, usedPrioritys);  //check if the user already choose the current priorety
     
 
@@ -22,19 +21,16 @@ addButton.addEventListener('click', () => { //add new item to the list
         newDivLi.setAttribute('class','todo-container');
 
         const itemPriorety = document.createElement('div');
+        itemPriorety.setAttribute('class', 'todo-priority');
         itemPriorety.innerText = currentPriority;
-//console.log(itemPriorety);
 
         const itemText = document.createElement('div');
         itemText.setAttribute('class', 'todo-text');
         itemText.innerText = insertedValue;
-//console.log(itemText);
-
         
         const itemAddTime = document.createElement('div');
         itemAddTime.setAttribute('class', 'todo-created-at');
         itemAddTime.innerText = new Date().toISOString().slice(0, 19).replace('T', ' ');
-//console.log(itemAddTime);
 
 
         newDivLi.append(itemPriorety);
@@ -46,6 +42,8 @@ addButton.addEventListener('click', () => { //add new item to the list
         todoCounter++;
         const counterText = document.getElementById('counter');
         counterText.innerText = "You have got " +todoCounter + " to-do" ;
+
+        input.value = '';
     }
   
 });
