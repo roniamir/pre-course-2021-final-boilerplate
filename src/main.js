@@ -26,7 +26,7 @@ console.log(itemText);
         
         const itemAddTime = document.createElement('div');
         itemAddTime.setAttribute('class', 'todo-created-at');
-        itemAddTime.innerText = new Date().toLocaleString();
+        itemAddTime.innerText = new Date().toISOString().slice(0, 19).replace('T', ' ');
 console.log(itemAddTime);
 
 
