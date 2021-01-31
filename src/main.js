@@ -4,7 +4,10 @@ const input = document.getElementById('text-input');
 const prioritySelect = document.getElementById('priority-selector');
 const todoContainer = document.getElementById('list-container');
 
+const counterText = document.getElementById('counter');
 let todoCounter = 0;
+counterText.innerText = todoCounter;
+
 const usedPrioritys =[];
 
 addButton.addEventListener('click', () => { //add new item to the list
@@ -21,15 +24,15 @@ addButton.addEventListener('click', () => { //add new item to the list
         newDivLi.setAttribute('class','todo-container');
 
         const itemPriorety = document.createElement('div');
-        itemPriorety.setAttribute('class', 'todo-priority');
+        itemPriorety.setAttribute('class', 'todo-priority todo-item');
         itemPriorety.innerText = currentPriority;
 
         const itemText = document.createElement('div');
-        itemText.setAttribute('class', 'todo-text');
+        itemText.setAttribute('class', 'todo-text todo-item');
         itemText.innerText = insertedValue;
         
         const itemAddTime = document.createElement('div');
-        itemAddTime.setAttribute('class', 'todo-created-at');
+        itemAddTime.setAttribute('class', 'todo-created-at todo-item');
         itemAddTime.innerText = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
 
@@ -40,9 +43,7 @@ addButton.addEventListener('click', () => { //add new item to the list
         todoContainer.append(newDivLi);
 
         todoCounter++;
-        const counterText = document.getElementById('counter');
-        counterText.innerText = "You have got " +todoCounter + " to-do" ;
-
+        counterText.innerText = todoCounter;
         input.value = '';
     }
   
