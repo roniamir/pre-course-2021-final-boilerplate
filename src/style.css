@@ -32,7 +32,6 @@ header{
 #view-section{
     background: white;
     text-align: center;
-
 }
 
 .list-container{
@@ -52,7 +51,6 @@ header{
 .todo-item{
     position: relative;
     width: 70%;
-    background-color: linear-gradient(to top, rgb(127, 221, 250), rgb(253, 146, 226));
     text-align: center;
 }
 

@@ -2,7 +2,8 @@
 const addButton = document.getElementById('add-button'); 
 const input = document.getElementById('text-input');
 const prioritySelect = document.getElementById('priority-selector');
-const todoContainer = document.getElementById('list-container');
+//const todoContainer = document.getElementById('list-container');
+const viewSection = document.getElementById('view-section');
 
 const counterText = document.getElementById('counter');
 let todoCounter = 0;
@@ -15,6 +16,8 @@ localStorage.setItem( 'todo-list', JSON.stringify(todoListArray) );
 
 addButton.addEventListener('click', () => { //add new item to the list
     creatNewTodo();
+
+    sortTodoList(null, usedPrioritys);
 });
 
 function isPriorityExist (priority, arr){
@@ -39,10 +42,11 @@ function creatNewTodo(){
             date: new Date().toISOString().slice(0, 19).replace('T', ' ')
         }
         
-        todoListArray = JSON.parse(localStorage.getItem('todo-list')); // get the list from local storage
-        todoListArray.push(todoObj); //add new todo to the todo-array
-        localStorage.setItem('todo-list', JSON.stringify(todoListArray));  //set the new updated array to the local storage
-
+        todoListArray.push(todoObj);
+        localStorage.setItem('todo-list', JSON.stringify(todoListArray));
+        //todoListArray = JSON.parse(localStorage.getItem('todo-list')); // get the list from local storage
+        //todoListArray.push(todoObj); //add new todo to the todo-array
+        //localStorage.setItem('todo-list', JSON.stringify(todoListArray));  //set the new updated array to the local storage
 
         let newDivLi =  document.createElement('div');
         newDivLi.setAttribute('class','todo-container');
@@ -64,7 +68,7 @@ function creatNewTodo(){
         newDivLi.append(itemText);
         newDivLi.append(itemAddTime);
         
-        todoContainer.append(newDivLi);
+        viewSection.append(newDivLi);
 
         todoCounter++;
         counterText.innerText = todoCounter;
@@ -97,9 +101,19 @@ function isListSorted(arr){
 }
 
 //sort the to-do list
-function sortTodoList(priorityArr){
-    const sortedList = [];
-    for(let obj in arr){
-
+function sortTodoList(todoArr, prioretyArr){
+    let newOrderPriority = prioretyArr;
+    newOrderPriority.sort((a, b) =>  b - a);  //order the priorities from the largest to the smallest
+    sortTodoList = [];
+    for(let prioritySort in newOrderPriority){
+        for(let obj in todoArr){
+            if(obj.priority === prioritySort){
+                sortTodoList.push(obj);
+                break;
+            }
+        }
     }
 }
+
+
+   
