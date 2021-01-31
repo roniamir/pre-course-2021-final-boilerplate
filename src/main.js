@@ -17,7 +17,6 @@ localStorage.setItem( 'todo-list', JSON.stringify(todoListArray) );
 addButton.addEventListener('click', () => { //add new item to the list
     creatNewTodo();
 
-    sortTodoList(null, usedPrioritys);
 });
 
 function isPriorityExist (priority, arr){
@@ -81,18 +80,23 @@ function updateLocalStoreage(){
 }
 
 const sortButton = document.getElementById('sort-button');
+
 sortButton.addEventListener('click', () => {
-    if(!isListSorted()){
-        
+    console.log(isListSorted(todoListArray));
+    console.log(todoListArray);
+
+    if(!isListSorted(todoListArray)){
+       todoListArray = sortTodoList(todoListArray, usedPrioritys); 
+       
     }
 })
 
 //check if the to-do list is sorted
 function isListSorted(arr){
     let lastPriority = 6;
-    for(let obj in arr){
-        const todoPriorety = obj.priority;
-        if(todoPriorety > prioretyNum){
+    for(let obj of arr){
+        let todoPriorety = obj.priority;
+        if(todoPriorety > lastPriority){
             return false;
         }
         lastPriority = todoPriorety;
@@ -103,15 +107,24 @@ function isListSorted(arr){
 //sort the to-do list
 function sortTodoList(todoArr, prioretyArr){
     let newOrderPriority = prioretyArr;
-    newOrderPriority.sort((a, b) =>  b - a);  //order the priorities from the largest to the smallest
-    sortTodoList = [];
-    for(let prioritySort in newOrderPriority){
-        for(let obj in todoArr){
-            if(obj.priority === prioritySort){
+    newOrderPriority.sort((a, b) =>  b - a);  //change the order of the priorities from the largest to the smallest
+    let sortTodoList = [];
+    for(let i = 0; i < newOrderPriority.length; i++){
+        for(let obj of todoArr){
+
+            if(obj.priority === newOrderPriority[i]){
                 sortTodoList.push(obj);
                 break;
             }
         }
+    }
+    return sortTodoList;
+}
+
+function showSortListInDom(){
+    const allMyTodo = document.querySelectorAll('.todo-container');
+    for(let elem in allMyTodo){
+       
     }
 }
 
