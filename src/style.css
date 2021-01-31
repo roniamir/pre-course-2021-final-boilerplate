@@ -18,13 +18,25 @@ body{
     border-radius: 5px;
     padding: 25px;
 }
+header{
+    font-size: 30px;
+}
 
 #control_section{
-    background: rosybrown;
+    background: rgb(13, 2, 41);
+    color: white;
+    text-align: center;
+    padding: 8px;
 }
 
 #view-section{
     background: white;
+    text-align: center;
+
+}
+
+.list-container{
+    border-radius: 20px;
 }
 
 .todo-container{
@@ -34,12 +46,13 @@ body{
     border-radius: 20px;
     display: flex;
     position: relative;
+    margin: 8px;
 }
 
 .todo-item{
     position: relative;
     width: 70%;
-    border:pink 1px solid;
+    background-color: linear-gradient(to top, rgb(127, 221, 250), rgb(253, 146, 226));
     text-align: center;
 }
 
