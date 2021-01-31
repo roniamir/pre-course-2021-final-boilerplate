@@ -8,8 +8,9 @@ const counterText = document.getElementById('counter');
 let todoCounter = 0;
 counterText.innerText = todoCounter;
 
+
 const usedPrioritys =[];
-const todoListArray = [];
+let todoListArray = [];
 localStorage.setItem( 'todo-list', JSON.stringify(todoListArray) );
 
 addButton.addEventListener('click', () => { //add new item to the list
@@ -30,18 +31,18 @@ function creatNewTodo(){
     const currentPriority = prioritySelect.value; //get the nte todo's priority
     const isNewPriorityExist = isPriorityExist(currentPriority, usedPrioritys);  //check if the user already choose the current priorety
     
-
     if(insertedValue !== '' && insertedValue !== undefined && currentPriority && !isNewPriorityExist){ //if the user inserted good todo: 1-got value 2-choosed priority 3-the prioriry has not choose before
         usedPrioritys.push(currentPriority); //push the new priority to the counter (priority array)
         const todoObj = { //creat todo object 
-            priority: currentPriority,
             text: insertedValue,
-            addTime: new Date().toISOString().slice(0, 19).replace('T', ' ')
+            priority: currentPriority,
+            date: new Date().toISOString().slice(0, 19).replace('T', ' ')
         }
         
-        const todoList = JSON.parse(localStorage.getItem('todo-list')); // get the list from local storage
-        todoList.push(todoObj); //add new todo to the todo-array
-        localStorage.setItem('todo-list', JSON.stringify(todoList));  //set the new updated array to the local storage
+        todoListArray = JSON.parse(localStorage.getItem('todo-list')); // get the list from local storage
+        todoListArray.push(todoObj); //add new todo to the todo-array
+        localStorage.setItem('todo-list', JSON.stringify(todoListArray));  //set the new updated array to the local storage
+
 
         let newDivLi =  document.createElement('div');
         newDivLi.setAttribute('class','todo-container');
@@ -56,7 +57,7 @@ function creatNewTodo(){
         
         const itemAddTime = document.createElement('div');
         itemAddTime.setAttribute('class', 'todo-created-at todo-item');
-        itemAddTime.innerText = todoObj.addTime;
+        itemAddTime.innerText = todoObj.date;
 
 
         newDivLi.append(itemPriorety);
@@ -78,10 +79,27 @@ function updateLocalStoreage(){
 const sortButton = document.getElementById('sort-button');
 sortButton.addEventListener('click', () => {
     if(!isListSorted()){
-
+        
     }
 })
 
-function isListSorted(){
+//check if the to-do list is sorted
+function isListSorted(arr){
+    let lastPriority = 6;
+    for(let obj in arr){
+        const todoPriorety = obj.priority;
+        if(todoPriorety > prioretyNum){
+            return false;
+        }
+        lastPriority = todoPriorety;
+    }
+    return true;
+}
 
+//sort the to-do list
+function sortTodoList(priorityArr){
+    const sortedList = [];
+    for(let obj in arr){
+
+    }
 }
