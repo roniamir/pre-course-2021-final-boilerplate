@@ -147,3 +147,11 @@ GOOD LUCK!
 I wanted to give my list colorful and happy style.
 The idea of the rainbow colors came when i thought "how can i make every to-do more intresthing?". After too many houres looking on a screen, I decided to put a lil bit of "sun light" and more happy colors in my to-do list.
 The "specialety" of the style, is that for every new to-do, refresh and 'sort' click - the order of the rainbow-colors stays correct and fit himself to every change.
+
+the function *todoColor()* checks what is the to-do item place in the array, and by the rest of hit division with 7 knows to return his color from the 7th rainbow colors.
+The returned color sets as class name in the to-do container element.
+
+  FOR EXAMPLE: my list got two "to-do" tasks. first color: red, second color: orange  
+                the new and number 3 in the list will get the class name: "yellow"
+
+In my css file, every color-class gets her own background color.
