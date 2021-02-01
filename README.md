@@ -129,9 +129,14 @@ Note that each commit to `main` branch will trigger a github [action](https://do
 
 GOOD LUCK!
 
-//my README
+
+
+
+
 # README pre-course 2021 final 
 
+Hey! 
+Welcome to my pre-course FINAL project - Todo List Web Application. 🤘
 
 ## List of resources:
 - https://www.w3schools.com/
@@ -141,6 +146,7 @@ GOOD LUCK!
   - The Coders
   - Dev Ed
   - Web Dev Simplified
+- Github : 
 
 ## Style
 
@@ -153,5 +159,20 @@ The returned color sets as class name in the to-do container element.
 
   FOR EXAMPLE: my list got two "to-do" tasks. first color: red, second color: orange  
                 the new and number 3 in the list will get the class name: "yellow"
-
+```style
+todoColor(){
+.
+.
+switch (placeInList % 7){
+  case 1:{
+    return 'red';
+    break;
+  }
+  case 2:{
+    return 'orange';
+    break;
+  }
+}
+}
+```
 In my css file, every color-class gets her own background color.

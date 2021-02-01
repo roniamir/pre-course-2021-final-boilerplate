@@ -107,9 +107,7 @@ function creatNewTodo(){
 function todoColor(todoCounter){
     console.log(todoCounter);
     let placeInList = todoCounter + 1;
-    console.log("p in list "+placeInList);
     let todoBgColor;
-    console.log("in todo color, the modulo is: " + placeInList % 7);
     switch(placeInList % 7){
         case 1:{
             todoBgColor = 'red';
