@@ -128,3 +128,22 @@ Note that each commit to `main` branch will trigger a github [action](https://do
 - Record a 5-10 min selfie video, describe yourself in a few words (age, location, military background, technological background). Also, talk about the solution you submitted (try to explain how your app works in general and which bonuses you added). Think about this video as an interview.
 
 GOOD LUCK!
+
+//my README
+# README pre-course 2021 final 
+
+
+## List of resources:
+- https://www.w3schools.com/
+- https://developer.mozilla.org/
+- https://stackoverflow.com/
+- Youtube channels:
+  - The Coders
+  - Dev Ed
+  - Web Dev Simplified
+
+## Style
+
+I wanted to give my list colorful and happy style.
+The idea of the rainbow colors came when i thought "how can i make every to-do more intresthing?". After too many houres looking on a screen, I decided to put a lil bit of "sun light" and more happy colors in my to-do list.
+The "specialety" of the style, is that for every new to-do, refresh and 'sort' click - the order of the rainbow-colors stays correct and fit himself to every change.
