@@ -30,7 +30,7 @@ header{
     left: 0;
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: 10;
     margin: auto;
     text-align: center;
     vertical-align: middle;
@@ -44,7 +44,11 @@ header{
     padding: 8px;
     position: relative;
     align-items: center;
-    height: 200px;
+    height: 280px;
+}
+.control-section-item{
+    position: relative;
+    margin-top: 230px;
 }
 
 #view-section{
@@ -59,11 +63,10 @@ header{
 .todo-container{
     height: 45px;
     line-height: 45px;
-    border: 2px solid black;
-    border-radius: 20px;
     display: flex;
     position: relative;
-    margin: 8px;
+    margin-top:  8px;
+    margin-bottom: 8px;
 }
 
 .todo-item{
