@@ -73,7 +73,8 @@ function creatNewTodo(){
             
             let newDivLi =  document.createElement('div');
             newDivLi.setAttribute('class','todo-container');
-            const bgColor = todoColor(todoCounter);
+            const bgColor = todoColor(todoListArray.length - 1);
+            console.log("just add new todo with counter of : "+ todoCounter);
             newDivLi.className += " "+bgColor;
 
             const itemPriorety = document.createElement('div');
