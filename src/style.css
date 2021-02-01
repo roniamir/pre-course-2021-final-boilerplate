@@ -26,6 +26,13 @@ header{
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
 }
 
 #control_section{
@@ -33,6 +40,9 @@ header{
     color: black;
     text-align: center;
     padding: 8px;
+    position: relative;
+    align-items: center;
+    height: 200px;
 }
 
 #view-section{
