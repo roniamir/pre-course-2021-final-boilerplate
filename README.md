@@ -137,6 +137,7 @@ GOOD LUCK!
 
 Hey! 
 Welcome to my pre-course FINAL project - Todo List Web Application. 🤘
+In this web, you can creat a to-do list - just insert your task, choose the numeric priority value of the task, and press the 'Add' button. The list will be ordered from the most importants to the less important tasks by pressing the 'Sort' button.
 
 ## List of resources:
 - https://www.w3schools.com/
