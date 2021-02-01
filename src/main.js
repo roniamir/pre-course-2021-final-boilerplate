@@ -66,41 +66,81 @@ function creatNewTodo(){
             priority: currentPriority,
             date: new Date().toISOString().slice(0, 19).replace('T', ' ')
         }
-        
-                    todoListArray = JSON.parse(localStorage.getItem('todo-list'));
-                    todoListArray.push(todoObj);
-                    localStorage.setItem('todo-list', JSON.stringify(todoListArray));
-                    
-                    let newDivLi =  document.createElement('div');
-                    newDivLi.setAttribute('class','todo-container');
 
-                    const itemPriorety = document.createElement('div');
-                    itemPriorety.setAttribute('class', 'todo-priority todo-item');
-                    itemPriorety.innerText = todoObj.priority;
+            todoListArray = JSON.parse(localStorage.getItem('todo-list'));
+            todoListArray.push(todoObj);
+            localStorage.setItem('todo-list', JSON.stringify(todoListArray));
+            
+            let newDivLi =  document.createElement('div');
+            newDivLi.setAttribute('class','todo-container');
+            const bgColor = todoColor(todoCounter);
+            newDivLi.className += " "+bgColor;
 
-                    const itemText = document.createElement('div');
-                    itemText.setAttribute('class', 'todo-text todo-item');
-                    itemText.innerText = todoObj.text;
-                    
-                    const itemAddTime = document.createElement('div');
-                    itemAddTime.setAttribute('class', 'todo-created-at todo-item');
-                    itemAddTime.innerText = todoObj.date;
+            const itemPriorety = document.createElement('div');
+            itemPriorety.setAttribute('class', 'todo-priority todo-item');
+            itemPriorety.innerText = todoObj.priority;
+
+            const itemText = document.createElement('div');
+            itemText.setAttribute('class', 'todo-text todo-item');
+            itemText.innerText = todoObj.text;
+            
+            const itemAddTime = document.createElement('div');
+            itemAddTime.setAttribute('class', 'todo-created-at todo-item');
+            itemAddTime.innerText = todoObj.date;
 
 
-                    newDivLi.append(itemPriorety);
-                    newDivLi.append(itemText);
-                    newDivLi.append(itemAddTime);
-                    
-                    viewSection.append(newDivLi);
+            newDivLi.append(itemPriorety);
+            newDivLi.append(itemText);
+            newDivLi.append(itemAddTime);
+            
+            viewSection.append(newDivLi);
 
-                    todoCounter = todoListArray.length;
-                    counterText.innerText = todoCounter;
-                    input.value = '';
+            todoCounter = todoListArray.length;
+            counterText.innerText = todoCounter;
+            input.value = '';
     }
 }
 
 
-
+//change the color of the to-do backrond
+function todoColor(todoCounter){
+    console.log(todoCounter);
+    let placeInList = todoCounter + 1;
+    console.log("p in list "+placeInList);
+    let todoBgColor;
+    console.log("in todo color, the modulo is: " + placeInList % 7);
+    switch(placeInList % 7){
+        case 1:{
+            todoBgColor = 'red';
+            break;
+        }
+        case 2:{
+            todoBgColor = 'orange';
+            break;
+        }
+        case 3:{
+            todoBgColor = 'yellow';
+            break;
+        }
+        case 4:{
+            todoBgColor = 'green';
+            break;
+        }
+        case 5:{
+            todoBgColor = 'light-blue';
+            break;
+        }
+        case 6:{
+            todoBgColor = 'blue';
+            break;
+        }
+        case 0:{
+            todoBgColor = 'purple';
+            break;
+        }
+    }
+    return todoBgColor;
+}
 
 
 
@@ -134,8 +174,11 @@ function sortTodoList(){
 }
 
 function loadTodos(){
+    let todoCounter = 0;
+    console.log(todoCounter);
+    
     for(let todoObj of todoListArray){
-              
+              console.log("loadTodos, the counter is : " + todoCounter);
         let newDivLi =  document.createElement('div');
         newDivLi.setAttribute('class','todo-container');
 
@@ -151,13 +194,17 @@ function loadTodos(){
         itemAddTime.setAttribute('class', 'todo-created-at todo-item');
         itemAddTime.innerText = todoObj.date;
 
+        const bgColor = todoColor(todoCounter);
+        newDivLi.className += " "+bgColor;
+
         newDivLi.append(itemPriorety);
         newDivLi.append(itemText);
         newDivLi.append(itemAddTime);
         
         viewSection.append(newDivLi); 
+        todoCounter++;
     }
-    todoCounter = todoListArray.length;
+   // todoCounter = todoListArray.length;
     counterText.innerText = todoCounter;
 }
 
