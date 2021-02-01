@@ -2,29 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
     height: 100vh;
     width: 100%;
-    background: linear-gradient(to bottom, rgb(127, 221, 250), rgb(253, 146, 226));
+    background-image: url('./cloudsBackground1edit.png');
+    background-size: cover;
 }
 
 #wrapper{
     margin: 120px auto ;
     max-width: 700px;
     width: 100%;
-    background: rgb(10, 10, 10);
+    background: blur(20px);
     border-radius: 5px;
     padding: 25px;
 }
 header{
     font-size: 30px;
+    background: rgb(255, 230, 0);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
 }
 
 #control_section{
-    background: rgb(13, 2, 41);
-    color: white;
+    background: rgb(255, 255, 255);
+    color: black;
     text-align: center;
     padding: 8px;
 }
