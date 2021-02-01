@@ -9,19 +9,30 @@ const counterText = document.getElementById('counter');
 let todoCounter = 0;
 counterText.innerText = todoCounter;
 
+//console.log(typeof todoListArray === 'undefined');
 
-const usedPrioritys =[];
-let todoListArray = [];
-localStorage.setItem( 'todo-list', JSON.stringify(todoListArray) );
+//const todoListArray = JSON.parse(localStorage.getItem('todo-list'));
+
+if(typeof todoListArray === 'undefined'){
+    let usedPrioritys = [];
+    let todoListArray = [];
+    localStorage.setItem( 'todo-list', JSON.stringify(todoListArray) ); 
+    localStorage.setItem('used-priorities-list', JSON.stringify(todoListArray));
+} //else{
+  //  let todoListArray = JSON.parse(localStorage.getItem('todo-list'));
+    //listToDom();
+//}
+    
 
 addButton.addEventListener('click', () => { //add new item to the list
     creatNewTodo();
-
 });
 
 function isPriorityExist (priority, arr){
-    for(let priorityNum of arr){
-        if(priority === priorityNum){
+    for(let obj of arr){
+        console.log(obj.priority+" is the priority in the array");
+        console.log("the new priority is: "+priority);
+        if(obj.priority === priority){
             return true;
         } 
     }
@@ -31,22 +42,25 @@ function isPriorityExist (priority, arr){
 function creatNewTodo(){
     const insertedValue = input.value;  //get the user new todo content
     const currentPriority = prioritySelect.value; //get the nte todo's priority
-    const isNewPriorityExist = isPriorityExist(currentPriority, usedPrioritys);  //check if the user already choose the current priorety
+    //const usedPrioritysArray = JSON.parse(localStorage.getItem('used-priorities-list'));
+    let todoListArray = JSON.parse(localStorage.getItem('todo-list'));
+    let usedPrioritys = JSON.parse(localStorage.getItem('used-priorities-list'));
     
+    const isNewPriorityExist = isPriorityExist(currentPriority, todoListArray);  //check if the user already choose the current priorety
     if(insertedValue !== '' && insertedValue !== undefined && currentPriority && !isNewPriorityExist){ //if the user inserted good todo: 1-got value 2-choosed priority 3-the prioriry has not choose before
         usedPrioritys.push(currentPriority); //push the new priority to the counter (priority array)
+        localStorage.setItem('used-priorities-list',JSON.stringify(usedPrioritys));
+
         const todoObj = { //creat todo object 
             text: insertedValue,
             priority: currentPriority,
             date: new Date().toISOString().slice(0, 19).replace('T', ' ')
         }
         
+        let todoListArray = JSON.parse(localStorage.getItem('todo-list'));
         todoListArray.push(todoObj);
         localStorage.setItem('todo-list', JSON.stringify(todoListArray));
-        //todoListArray = JSON.parse(localStorage.getItem('todo-list')); // get the list from local storage
-        //todoListArray.push(todoObj); //add new todo to the todo-array
-        //localStorage.setItem('todo-list', JSON.stringify(todoListArray));  //set the new updated array to the local storage
-
+        
         let newDivLi =  document.createElement('div');
         newDivLi.setAttribute('class','todo-container');
 
@@ -75,19 +89,46 @@ function creatNewTodo(){
     }
 }
 
-function updateLocalStoreage(){
-   
+function listToDom(){
+    for(let todoObj of todoListArray){
+        let newDivLi =  document.createElement('div');
+        newDivLi.setAttribute('class','todo-container');
+
+        const itemPriorety = document.createElement('div');
+        itemPriorety.setAttribute('class', 'todo-priority todo-item');
+        itemPriorety.innerText = todoObj.priority;
+
+        const itemText = document.createElement('div');
+        itemText.setAttribute('class', 'todo-text todo-item');
+        itemText.innerText = todoObj.text;
+    
+        const itemAddTime = document.createElement('div');
+        itemAddTime.setAttribute('class', 'todo-created-at todo-item');
+        itemAddTime.innerText = todoObj.date;
+
+
+        newDivLi.append(itemPriorety);
+        newDivLi.append(itemText);
+        newDivLi.append(itemAddTime);
+        
+        viewSection.append(newDivLi);
+
+        todoCounter++;
+        counterText.innerText = todoCounter;
+        input.value = '';
+    }
 }
+
 
 const sortButton = document.getElementById('sort-button');
 
 sortButton.addEventListener('click', () => {
-    console.log(isListSorted(todoListArray));
-    console.log(todoListArray);
+    let todoListArray = JSON.parse(localStorage.getItem('todo-list'));
+    let usedPrioritys = JSON.parse(localStorage.getItem('used-priorities-list'));
 
     if(!isListSorted(todoListArray)){
        todoListArray = sortTodoList(todoListArray, usedPrioritys); 
-       
+       showSortListInDom(todoListArray);
     }
 })
 
@@ -121,11 +162,37 @@ function sortTodoList(todoArr, prioretyArr){
     return sortTodoList;
 }
 
-function showSortListInDom(){
+function showSortListInDom(arr){
     const allMyTodo = document.querySelectorAll('.todo-container');
-    for(let elem in allMyTodo){
-       
+    for(let i = 0; i < allMyTodo.length; i++){
+        allMyTodo[i].remove();
     }
+   // localStorage.setItem('todo-list', JSON.stringify(todoListArray));
+    
+
+    for(let todoObj of arr){
+              
+        let newDivLi =  document.createElement('div');
+        newDivLi.setAttribute('class','todo-container');
+
+        const itemPriorety = document.createElement('div');
+        itemPriorety.setAttribute('class', 'todo-priority todo-item');
+        itemPriorety.innerText = todoObj.priority;
+
+        const itemText = document.createElement('div');
+        itemText.setAttribute('class', 'todo-text todo-item');
+        itemText.innerText = todoObj.text;
+        
+        const itemAddTime = document.createElement('div');
+        itemAddTime.setAttribute('class', 'todo-created-at todo-item');
+        itemAddTime.innerText = todoObj.date;
+
+        newDivLi.append(itemPriorety);
+        newDivLi.append(itemText);
+        newDivLi.append(itemAddTime);
+        
+        viewSection.append(newDivLi);
+    }   
 }
 
 
