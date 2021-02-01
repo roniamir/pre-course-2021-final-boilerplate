@@ -78,3 +78,25 @@ header{
 .todo-priority{
     width: 130px;
 }
+
+.red{
+    background: tomato;
+}
+.orange{
+    background: rgb(255, 178, 34);
+}
+.yellow{
+    background: rgb(255, 255, 101);
+}
+.green{
+    background: rgb(36, 129, 36);
+}
+.light-blue{
+    background: lightblue;
+}
+.blue{
+    background: rgb(2, 2, 97);
+}
+.purple{
+    background:rgb(129, 44, 129);
+}
