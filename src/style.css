@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 body{
@@ -61,10 +62,13 @@ header{
 }
 #add-button:hover{
     background: rgb(243, 243, 97);
+    border: none;
 }
 #sort-button:hover{
     background: rgb(243, 243, 97);
+    border: none;
 }
+
 
 
 
@@ -109,10 +113,11 @@ header{
     background: rgb(36, 129, 36);
 }
 .light-blue{
-    background: lightblue;
+    background: rgb(108, 213, 248);
 }
 .blue{
     background: rgb(2, 2, 97);
+    color: white;
 }
 .purple{
     background:rgb(129, 44, 129);
