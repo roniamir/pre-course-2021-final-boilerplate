@@ -23,6 +23,7 @@ Additionally, the to-do have to get from the user a priority number, else the to
 Each to do will be shown his priority, to-do text and time the mentions the adding to the list time.
 Clicking on 'Add' will add the new todo, and clicking on 'Sort' will order the list from the most important tasks (number 5 priority) o the less important tasks (number 1 priority).
 
+
 ## Project Status
 
 Finished project - including all the required elements such as class names, ids, tests requirements, and using the passed month learned materials.
