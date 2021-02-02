@@ -14,6 +14,15 @@ The program is built from 3 main files:
 The JS file made from 3 parts - setting Variables, event Listners, and functions.
 - ![Style](./src/style.css) - including the style of the page in CSS file.
 
+
+## How To Use?
+
+Opening the to-do list page will show you an empty to do lists. ![empty to-do list](./src/images/empty=todo.PNG)
+To insert new 'to-do', you have to type any text. the todo wont be add to the list with empty input.
+Additionally, the to-do have to get from the user a priority number, else the to-do wond be add to the list.
+Each to do will be shown his priority, to-do text and time the mentions the adding to the list time.
+Clicking on 'Add' will add the new todo, and clicking on 'Sort' will order the list from the most important tasks (number 5 priority) o the less important tasks (number 1 priority).
+
 ## Project Status
 
 Finished project - including all the required elements such as class names, ids, tests requirements, and using the passed month learned materials.
@@ -55,7 +64,7 @@ The returned color sets as class name in the to-do container element.
   FOR EXAMPLE: my list got two "to-do" tasks. first color: red, second color: orange  
                 the new and number 3 in the list will get the class name: "yellow"
 
-![EXAMPLE - add new to do](./src/todo-style-example.PNG)
+![EXAMPLE - add new to do](./src/images/todo-style-example.PNG)
 
 In my css file, every color-class gets her own background color.
 
