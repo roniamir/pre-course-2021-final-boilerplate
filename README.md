@@ -139,12 +139,31 @@ Hey!
 Welcome to my pre-course FINAL project - Todo List Web Application. 🤘
 In this web, you can creat a to-do list. just insert your task, choose the numeric priority value of the task, and press the 'Add' button. The list will be ordered from the most importants to the less important tasks by pressing the 'Sort' button.
 
+
 ## Structure
 
 The program is built from 3 main files:
 - ![HTML](./src/index.html) - which including the HTML code
-- ![JavaScript](./src/main.js) - including the JavaScript behind the page - all the functions and event listeners that happens on the page
-- ![Style](./src/style.css) - including the style of the page in CSS file
+- ![JavaScript](./src/main.js) - including the JavaScript behind the page - all the functions and event listeners. that happens on the page.
+The JS file made from 3 parts - setting Variables, event Listners, and functions.
+- ![Style](./src/style.css) - including the style of the page in CSS file.
+
+### JavaScript Limitations
+
+The code works well, but got few limitation that important to know:
+- No delete for each to-do or the whole list. If you would like to 'clear' your list and make it empty again, you will hava to clear the local storage, or use diferent device.
+- You cant mark the to do that you have already done.
+
+Adding this two missiong option is not that complicated, but I decided to ditch those option to focus on the proect tests to work good and the style to stay 'ease'. You welcomed to add those options to the code!
+
+
+
+## Local Storage
+
+In the project I used 'local storage' to save my list information, so that on every "refresh" of the page the to-do list that the user creats wont delet, and will be shown on the document.
+If the user pressed 'Sort' and then 'Refresh', the order of the list will be as it was before the 'Sort' order happen.
+
+The list is saved in the local storage under the title of 'todo-list'.
 
 
 ## Tests
@@ -179,4 +198,11 @@ In my css file, every color-class gets her own background color.
   - The Coders
   - Dev Ed
   - Web Dev Simplified
-- Github : 
+
+
+## Autor
+- Name :Roni Amir
+- Email : roniamir24@gmail.com
+- Github : https://github.com/roniamir
+
+Feel comfortable to ask me questions about the project and contect me any time.
