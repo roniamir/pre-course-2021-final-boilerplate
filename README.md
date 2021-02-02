@@ -1,130 +1,88 @@
-# ![Scale-Up Velocity](./readme-files/logo-main.png) Pre Course Project - Todo List 📋
 
-This project will include most of the topics we have learnt so far.
-This repository includes a basic skeleton template with automated tests, use it for your submissions.
+# README pre-course 2021 final 
 
-In this project you will create a Todo List Web Application, in which the user can store prioritized _todo tasks_ and view/sort that list.
+Hey! 
+Welcome to my pre-course FINAL project - *Todo List Web Application*. 🤘
+In this web, you can creat a to-do list. just insert your task, choose the numeric priority value of the task, and press the 'Add' button. The list will be ordered from the most importants to the less important tasks by pressing the 'Sort' button.
 
-Here is a preview sample of the desired functionality (without styling):
 
-![Add todo task](./readme-files/basic-todo.gif)
+## Structure
 
-## Instructions
+The program is built from 3 main files:
+- ![HTML](./src/index.html) - which including the HTML code
+- ![JavaScript](./src/main.js) - including the JavaScript behind the page - all the functions and event listeners. that happens on the page.
+The JS file made from 3 parts - setting Variables, event Listners, and functions.
+- ![Style](./src/style.css) - including the style of the page in CSS file.
 
-- Fork this repository into your account. Make sure to select the **public** option ⑂
-- Clone your new repository to your computer 🖥
-- Install the project dependencies by running `npm install` from the vscode terminal `ctrl + j` (make sure you are in the correct directory) 📂
-<!-- - [Create new branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-branches) -->
-- Make changes to the code to meet the project requirements 📝
-- [Commit Early, Push Often](https://www.worklytics.co/commit-early-push-often/) - your work will be evaluated by your push history 📖
-- Good Luck! 🤘
 
-## Running tests
+## How To Use?
 
-We have created automated tests for your convenience, use it to check your progression.
+Opening the to-do list page will show you an empty to do lists. ![empty to-do list](./src/images/empty=todo.PNG)
+To insert new 'to-do', you have to type any text. the todo wont be add to the list with empty input.
+Additionally, the to-do have to get from the user a priority number, else the to-do wond be add to the list.
+Each to do will be shown his priority, to-do text and time the mentions the adding to the list time.
+Clicking on 'Add' will add the new todo, and clicking on 'Sort' will order the list from the most important tasks (number 5 priority) o the less important tasks (number 1 priority).
 
-Note that the automated tests rely on your code having the exact class names, Ids and objects structures as specified below.
 
-To run the tests locally simply run `npm run test` in the terminal
+## Project Status
 
-Note that each commit to `main` branch will trigger a github [action](https://docs.github.com/en/actions). You can easily see the action tests result on each commit:
+Finished project - including all the required elements such as class names, ids, tests requirements, and using the passed month learned materials.
 
-![Commits test](./readme-files/commit-tests.png)
+### JavaScript Limitations
 
-## Guidelines
+The code works well, but got few limitation that important to know:
+- No delete for each to-do or the whole list. If you would like to 'clear' your list and make it empty again, you will hava to clear the local storage, or use diferent device.
+- You cant mark the to do that you have already done.
 
-- The Todo list should have two sections: _Control_ section and _View_ section
-- The _Control_ section is where the user adds his todo task and priority, and should have three elements:
-  - [\<input\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) with id `text-input`.
-  - [\<select\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) with id `priority-selector` (options will be: 1-5).
-  - [\<button\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) with id `add-button`.
-- The _View_ section is where we display the list of added todo tasks and data. The list should start empty and each added todo should be inserted to the end of the list.
-- After the user clicks on the 'add' button, the todo input field should be "reset"
-- Every todo item should have a "container" div with class `todo-container` that will contain 3 sub-elements:
+Adding this two missiong option is not that complicated, but I decided to ditch those option to focus on the proect tests to work good and the style to stay 'ease'. You welcomed to add those options to the code!
 
-  - An element with a class `todo-text` with the text of the todo task
-  - An element with a class `todo-created-at` that will hold the creation time of the task in a [SQL format](https://www.w3schools.com/sql/sql_dates.asp#:~:text=SQL%20Date%20Data%20Types&text=DATE%20%2D%20format%20YYYY%2DMM%2D,YEAR%20%2D%20format%20YYYY%20or%20YY)
-  - An element for showing the numeric priority value of the task, with a class `todo-priority`
 
-  Good way 👍🏿:
 
-  ```
-    <div class="todo-container">
-      <div class="todo-priority">
-        1
-      </div>
-      <div class="todo-created-at">
-        2020-06-18 11:51:12
-      </div>
-      <div class="todo-text">
-        the todo text
-      </div>
-    </div>
-  ```
+## Local Storage
 
-  Bad way 👎🏿:
+In the project I used 'local storage' to save my list information, so that on every "refresh" of the page the to-do list that the user creats wont delet, and will be shown on the document.
+If the user pressed 'Sort' and then 'Refresh', the order of the list will be as it was before the 'Sort' order happen.
 
-  ```
-    <div class="todo-container">
-      <div class="todo-priority">
-        1
-      </div>
-      <div class="todo-created-at">
-        2020-06-18 11:51:12
-      </div>
-      <div class="todo-text">
-        <span>the todo text</span>
-      </div>
-    </div>
-  ```
+The list is saved in the local storage under the title of 'todo-list'.
 
-- Add a counter element to reflect the **current** number of todos stored in the app. This element should have an id of `counter`.
 
-- Add a button with id `sort-button`. Clicking this element should resort the todo list by their todos priority (DESC)
+## Tests
 
-  ![alt text](./readme-files/todo.gif)
+This project is passing 7 tests from the existing 8 (the failed test is the the bonus one).
+To run the build-in tests, type "npm run test" in the _TERMINAL_ at the bottom of the page.
+You can see the tests code in the file "final.test.js".
 
-- **Make your todo-list persistent!**
 
-  Save your todo-list as JSON (see `todo-list-example.json`) and store it in a persistent way, you have to options:
+## Style
 
-  1. Use the `localStorage` browser api to save / load the todo-list JSON **with the 'my-todo' key**. This option will make it persist between _page reloads_.
+I wanted to give my list colorful and happy style.
+The idea of the rainbow colors came when i thought "how can i make every to-do more intresthing?". After too many houres looking on a screen, I decided to put a lil bit of "sun light" and more happy colors in my to-do list.
+The "specialety" of the style, is that for every new to-do, refresh and 'sort' click - the order of the rainbow-colors stays correct and fit himself to every change.
 
-  2. Use the [jsonbin.io](https://jsonbin.io/) service api (using async/await fetch GET & PUT requests) to save / load your todo-list JSON. This option will make it persist across _devices and browsers_.
+the function *todoColor()* checks what is the to-do item place in the array, and by the rest of hit division with 7 knows to return his color from the 7th rainbow colors.
+The returned color sets as class name in the to-do container element.
 
-**Note** You can add extra properties to the todo objects in the JSON that you want to be persistent.
+  FOR EXAMPLE: my list got two "to-do" tasks. first color: red, second color: orange  
+                the new and number 3 in the list will get the class name: "yellow"
 
-## Bonus
+![EXAMPLE - add new to do](./src/images/todo-style-example.PNG)
 
-- jsonbin.io - see explanation above
-- Freestyle - add any feature you desire. Some ideas:
-  - [drag n' drop functionality](https://htmldom.dev/drag-and-drop-element-in-a-list)
-  - Delete + Edit a todo
-  - Undo action
-  - Search and highlight results
-  - Loading spinner for network request
-  - Mark/Unmark todo as done
-  - Something awesome we didn't think of...
-- For added value, you can add jest/puppeteer test to test any bonus feature you implemented
+In my css file, every color-class gets her own background color.
 
-**Add an explanation in `README.md` for each bonus feature you add and a link to any resoure you used**
 
-## Grading policy
+## List of resources:
+- https://www.w3schools.com/
+- https://developer.mozilla.org/
+- https://stackoverflow.com/
+- Youtube channels:
+  - The Coders
+  - Dev Ed
+  - Web Dev Simplified
 
-- Your project will be graded by the number of automatic tests you pass
-- Using jsonbin.io
-- Extra freestyle features - Please add an explanation about the bonus features you added to the readme.md
-- new jest/puppeteer test
-- Code quality and style: indentation, Meaningful and non-disambiguate variable names, Comments documentation
-- Visual creativity, use css to make this app look awesome 💅🏿
-- Division to reusable functions, no code duplication
-- Git usage: meaningful commit messages, small commits, folder and file structures
 
-## Submitting
+## Autor
+- Name :Roni Amir
+- Email : roniamir24@gmail.com
+- Github : https://github.com/roniamir
 
-- Change this file (README.md) and style it to showcase your solution (gifs, explanations, link to the github page, links to resources you used, etc...)
-- Submit your solution repo to the [ChallengeMe](http://challengeme.suvelocity.org/) system
-- Submit your repo link and github page and video to Google Classroom
-- Record a 5-10 min selfie video, describe yourself in a few words (age, location, military background, technological background). Also, talk about the solution you submitted (try to explain how your app works in general and which bonuses you added). Think about this video as an interview.
-
-GOOD LUCK!
+Feel comfortable to ask me questions about the project and contect me any time.

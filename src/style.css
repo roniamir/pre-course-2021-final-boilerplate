@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: url('./images/cloudsBackground1edit.png');
+    background-size: cover;
+}
+
+#wrapper{
+    margin: 120px auto ;
+    max-width: 700px;
+    width: 100%;
+    background: blur(20px);
+    border-radius: 5px;
+    padding: 25px;
+}
+header{
+    font-size: 30px;
+    background: rgb(255, 230, 0);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 10;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px; 
+}
+
+#control_section{
+    background: linear-gradient(to bottom, rgba(250, 250, 250, 0),white);
+    color: black;
+    text-align: center;
+    padding: 8px;
+    position: relative;
+    align-items: center;
+    height: 280px;
+}
+.control-section-item{
+    position: relative;
+    margin-top: 230px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+}
+
+#add-button #sort-button{
+    color: black;
+    transition: all 0.4 ease;
+}
+#add-button:hover{
+    background: rgb(243, 243, 97);
+    border: none;
+}
+#sort-button:hover{
+    background: rgb(243, 243, 97);
+    border: none;
+}
+
+
+
+
+#view-section{
+    background: white;
+    text-align: center;
+}
+
+.list-container{
+    border-radius: 20px;
+}
+
+.todo-container{
+    height: 45px;
+    line-height: 45px;
+    display: flex;
+    position: relative;
+    margin-top:  8px;
+    margin-bottom: 8px;
+}
+
+.todo-item{
+    position: relative;
+    width: 70%;
+    text-align: center;
+}
+
+.todo-priority{
+    width: 130px;
+}
+
+.red{
+    background: tomato;
+}
+.orange{
+    background: rgb(255, 178, 34);
+}
+.yellow{
+    background: rgb(255, 255, 101);
+}
+.green{
+    background: rgb(36, 129, 36);
+}
+.light-blue{
+    background: rgb(108, 213, 248);
+}
+.blue{
+    background: rgb(2, 2, 97);
+    color: white;
+}
+.purple{
+    background:rgb(129, 44, 129);
+}
