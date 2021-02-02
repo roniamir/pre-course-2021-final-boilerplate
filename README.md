@@ -142,9 +142,9 @@ In this web, you can creat a to-do list. just insert your task, choose the numer
 ## Structure
 
 The program is built from 3 main files:
-- 'index.html' - which including the HTML code
-- 'main.js' - including the JavaScript behind the page - all the functions and event listeners that happens on the page
-- style.css - including the style of the page in CSS file
+- ![HTML](./src/index.html) - which including the HTML code
+- ![JavaScript](./src/main.js) - including the JavaScript behind the page - all the functions and event listeners that happens on the page
+- ![Style](./src/style.css) - including the style of the page in CSS file
 
 
 ## Tests
@@ -166,7 +166,7 @@ The returned color sets as class name in the to-do container element.
   FOR EXAMPLE: my list got two "to-do" tasks. first color: red, second color: orange  
                 the new and number 3 in the list will get the class name: "yellow"
 
-![EXAMPLE - add new to do](./todo-style-example.PNG)
+![EXAMPLE - add new to do](./src/todo-style-example.PNG)
 
 In my css file, every color-class gets her own background color.
 
