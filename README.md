@@ -137,17 +137,22 @@ GOOD LUCK!
 
 Hey! 
 Welcome to my pre-course FINAL project - Todo List Web Application. 🤘
-In this web, you can creat a to-do list - just insert your task, choose the numeric priority value of the task, and press the 'Add' button. The list will be ordered from the most importants to the less important tasks by pressing the 'Sort' button.
+In this web, you can creat a to-do list. just insert your task, choose the numeric priority value of the task, and press the 'Add' button. The list will be ordered from the most importants to the less important tasks by pressing the 'Sort' button.
 
-## List of resources:
-- https://www.w3schools.com/
-- https://developer.mozilla.org/
-- https://stackoverflow.com/
-- Youtube channels:
-  - The Coders
-  - Dev Ed
-  - Web Dev Simplified
-- Github : 
+## Structure
+
+The program is built from 3 main files:
+- 'index.html' - which including the HTML code
+- 'main.js' - including the JavaScript behind the page - all the functions and event listeners that happens on the page
+- style.css - including the style of the page in CSS file
+
+
+## Tests
+
+This project is passing 7 tests from the existing 8 (the failed test is the the bonus one).
+To run the build-in tests, type "npm run test" in the _TERMINAL_ at the bottom of the page.
+You can see the tests code in the file "final.test.js".
+
 
 ## Style
 
@@ -160,20 +165,18 @@ The returned color sets as class name in the to-do container element.
 
   FOR EXAMPLE: my list got two "to-do" tasks. first color: red, second color: orange  
                 the new and number 3 in the list will get the class name: "yellow"
-```style
-todoColor(){
-.
-.
-switch (placeInList % 7){
-  case 1:{
-    return 'red';
-    break;
-  }
-  case 2:{
-    return 'orange';
-    break;
-  }
-}
-}
-```
+
+![EXAMPLE - add new to do](./todo-style-example.PNG)
+
 In my css file, every color-class gets her own background color.
+
+
+## List of resources:
+- https://www.w3schools.com/
+- https://developer.mozilla.org/
+- https://stackoverflow.com/
+- Youtube channels:
+  - The Coders
+  - Dev Ed
+  - Web Dev Simplified
+- Github : 
